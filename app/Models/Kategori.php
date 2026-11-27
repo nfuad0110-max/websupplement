@@ -9,7 +9,10 @@ class Kategori extends Model
 {
     protected $table = 'kategori';
 
-    protected $fillable = ['nama_kategori', 'slug'];
+    protected $fillable = [
+        'nama_kategori',
+        'slug',
+    ];
 
     public function produk(): HasMany
     {

@@ -7,6 +7,10 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class Pembayaran extends Model
 {
+    public const STATUS_MENUNGGU = 'Menunggu';
+    public const STATUS_VALID = 'Valid';
+    public const STATUS_DITOLAK = 'Ditolak';
+
     protected $table = 'pembayaran';
 
     protected $fillable = [

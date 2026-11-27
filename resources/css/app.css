@@ -1,11 +1,27 @@
 @import 'tailwindcss';
+@source '../views/**/*.blade.php';
 
-@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
-@source '../../storage/framework/views/*.php';
-@source '../**/*.blade.php';
-@source '../**/*.js';
-
+/* Token desain dari Panduan UI Supplemart v1.1 */
 @theme {
-    --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
-        'Segoe UI Symbol', 'Noto Color Emoji';
+    --font-sans: 'Plus Jakarta Sans', ui-sans-serif, system-ui, sans-serif;
+
+    --color-brand: #1B5E3F;      /* Hijau utama: aksi utama */
+    --color-brand-dark: #0E3B29; /* Hijau tua: sidebar, footer */
+    --color-leaf: #4C9F3A;       /* Hijau daun: ilustrasi */
+    --color-accent: #F08A24;     /* Oranye: satu aksi utama per layar, teks gelap */
+    --color-ink: #16221B;        /* Tinta: teks utama */
+    --color-mint: #F0F7F1;       /* Hijau muda: latar panel */
+    --color-canvas: #F6F8F5;     /* Latar halaman */
+    --color-wa: #178544;         /* Tombol WhatsApp */
+}
+
+@layer base {
+    body {
+        @apply bg-canvas font-sans text-[15px] text-ink antialiased;
+        font-variant-numeric: tabular-nums; /* harga dan stok sejajar */
+    }
+    :focus-visible {
+        outline: 2px solid var(--color-brand);
+        outline-offset: 2px;
+    }
 }

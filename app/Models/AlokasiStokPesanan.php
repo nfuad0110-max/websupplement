@@ -8,11 +8,14 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 class AlokasiStokPesanan extends Model
 {
     protected $table = 'alokasi_stok_pesanan';
-    public $timestamps = false;
+
+    public const UPDATED_AT = null;
 
     protected $fillable = [
-        'detail_pesanan_id', 'batch_stok_id', 'jumlah',
-        'dikembalikan_at', 'created_at',
+        'detail_pesanan_id',
+        'batch_stok_id',
+        'jumlah',
+        'dikembalikan_at',
     ];
 
     protected function casts(): array
