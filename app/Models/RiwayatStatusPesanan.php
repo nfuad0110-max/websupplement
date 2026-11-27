@@ -8,16 +8,22 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 class RiwayatStatusPesanan extends Model
 {
     protected $table = 'riwayat_status_pesanan';
-    public $timestamps = false;
+
+    public const UPDATED_AT = null;
 
     protected $fillable = [
-        'pesanan_id', 'status_lama', 'status_baru', 'diubah_oleh',
-        'catatan', 'created_at',
+        'pesanan_id',
+        'status_lama',
+        'status_baru',
+        'diubah_oleh',
+        'catatan',
     ];
 
     protected function casts(): array
     {
-        return ['created_at' => 'datetime'];
+        return [
+            'created_at' => 'datetime',
+        ];
     }
 
     public function pesanan(): BelongsTo

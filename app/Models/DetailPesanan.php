@@ -11,7 +11,11 @@ class DetailPesanan extends Model
     protected $table = 'detail_pesanan';
 
     protected $fillable = [
-        'pesanan_id', 'produk_id', 'nama_produk', 'harga_satuan', 'jumlah',
+        'pesanan_id',
+        'produk_id',
+        'nama_produk',
+        'harga_satuan',
+        'jumlah',
     ];
 
     protected function casts(): array
@@ -33,7 +37,7 @@ class DetailPesanan extends Model
         return $this->belongsTo(Produk::class, 'produk_id');
     }
 
-    public function alokasiStokPesanan(): HasMany
+    public function alokasiStok(): HasMany
     {
         return $this->hasMany(AlokasiStokPesanan::class, 'detail_pesanan_id');
     }
